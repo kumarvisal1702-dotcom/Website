@@ -1,0 +1,305 @@
+:root {
+  --bg: #0a0908;
+  --bg-card: #141210;
+  --text: #f5f3f0;
+  --text-muted: #b8b3ad;
+  --accent: #ff5722;
+  --accent-hover: #ff7043;
+  --yt-red: #ff0000;
+  --yt-red-hover: #e60000;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2 {
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* HEADER */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 9, 8, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--bg-card);
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.yt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--yt-red);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.yt-btn:hover,
+.yt-btn:focus-visible {
+  background: var(--yt-red-hover);
+  transform: translateY(-1px);
+}
+
+.yt-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* HERO */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 9rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero-copy p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 48ch;
+}
+
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.portrait-wrap {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 4.8;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.portrait-wrap:hover .portrait-img {
+  animation: gentle-wiggle 0.5s ease-in-out;
+}
+
+@keyframes gentle-wiggle {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-2deg) scale(1.02); }
+  50% { transform: rotate(2deg) scale(1.02); }
+  75% { transform: rotate(-1deg) scale(1.01); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.social-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--text);
+  transition: fill 0.2s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.social-icon.instagram:hover svg { fill: #e1306c; }
+.social-icon.xapp:hover svg { fill: #ffffff; }
+.social-icon.facebook:hover svg { fill: #1877f2; }
+
+/* I AM SECTION */
+.iam {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 87, 34, 0.1);
+  border: 1px solid rgba(255, 87, 34, 0.3);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+}
+
+.iam h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1.75rem;
+}
+
+.iam-lead {
+  font-size: 1.2rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.iam-content p {
+  color: var(--text-muted);
+}
+
+/* CONTACT — deliberately flat, no glow */
+.contact {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.contact-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.contact-email {
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-email:hover,
+.contact-email:focus-visible {
+  border-bottom-color: var(--text);
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 7rem;
+    text-align: left;
+  }
+
+  .hero-visual {
+    align-items: flex-start;
+  }
+
+  .header-inner {
+    padding: 0.75rem 1.2rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .yt-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
